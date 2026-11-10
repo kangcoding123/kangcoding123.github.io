@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>중력 탈출 받기 · Get Gravity Escape</title>
+<link rel="icon" href="../favicon.png">
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b1024; color: #e9ecff;
+         font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif; text-align: center; }
+  a { color: #ffd23f; }
+  img { width: 88px; height: 88px; border-radius: 22px; }
+</style>
+<script src="../links.js"></script>
+<script>
+  // 쇼츠·채널·블로그에 넣는 링크 하나: 아이폰이면 App Store, 안드로이드면 Play, 그 밖이면 홈페이지로
+  var d = GE.device(), q = location.search.match(/[?&]c=([\w-]+)/), c = q ? q[1] : "get";
+  if (d === "ios") location.replace(GE.appStore(c));
+  else if (d === "android" && GE.PLAY_LIVE) location.replace(GE.play(c));
+  else location.replace("../" + (d === "android" ? "?soon=android" : ""));
+</script>
+</head>
+<body>
+  <p><img src="../img/icon.png" alt=""><br>스토어로 가는 중… · Opening the store…<br><a href="../">중력 탈출 홈페이지 · Home</a></p>
+</body>
+</html>
